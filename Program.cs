@@ -48,6 +48,66 @@ Show2dArray(newArray);
 //8 4 2 4
 //17 -> такого числа в массиве нет
 
+/*
+int [,] Create2dArray(int row, int column, int minVal, int maxVal) 
+{
+    int [,] createdArray = new int [row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            createdArray [i,j] = new Random().Next(minVal, maxVal + 1);
+    return createdArray;
+}
+
+void Show2dArray(int [,] array)
+{
+    Console.WriteLine();
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");  
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int FindElementArray(int [,] array)
+{
+    Console.WriteLine("Input position of rows: ");
+    int rowsPosition = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Input position of columns: ");
+    int columnsPosition = Convert.ToInt32(Console.ReadLine());
+    int element = 0;
+
+    for(int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
+                if (i == rowsPosition && j == columnsPosition)
+                    element = array[i, j];
+    return element;
+}
+
+Console.WriteLine("Input count of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input count of columns: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int [,] newArray = Create2dArray(rows, columns, min, max);
+Show2dArray(newArray);
+
+int findelement = FindElementArray(newArray);
+if (findelement == 0)
+    Console.WriteLine("No element at this position");
+else
+    Console.WriteLine($"Element found: {findelement} ");
+
+*/
 
 
 //Задача 52. Задайте двумерный массив из целых чисел.
