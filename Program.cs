@@ -141,6 +141,7 @@ void Show2dArray(int [,] array)
 
 void FindElementArray(int [,] array)
 {
+    Console.WriteLine("Input the position of the element:: ");
     Console.WriteLine("Input position of rows: ");
     int rowPosition = Convert.ToInt32(Console.ReadLine());
 
@@ -167,7 +168,7 @@ void FindElementArray(int [,] array)
         for (int j = 0; j < array.GetLength(1); j++)
                 if (i == rowPosition && j == columnPosition)
                     element = array[i, j];
-    Console.WriteLine($"Еlement at position |row:{rowPosition}, column:{columnPosition}| is {element}");
+    Console.WriteLine($"Еlement at position(row:{rowPosition}, column:{columnPosition}) is {element}");
 }
 
 Console.WriteLine("Input count of rows: ");
@@ -181,8 +182,8 @@ Console.WriteLine("Input max possible value: ");
 int max = Convert.ToInt32(Console.ReadLine());
 
 int [,] newArray = Create2dArray(rows, columns, min, max);
-FindElementArray(newArray);
 Show2dArray(newArray);
+FindElementArray(newArray);
 */
 
 //Задача 52. Задайте двумерный массив из целых чисел.
