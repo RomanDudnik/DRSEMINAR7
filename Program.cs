@@ -141,21 +141,18 @@ void Show2dArray (int [,] array)
     Console.WriteLine();
 }
 
-double AverageColumns (int [,] array)
+double [] AverageColumns (int [,] array)
 {
-    double sumColumns = 0;
-    int count = 0;
+    double [] averArray = new double [array.GetLength(0)];
 
     for (int i = 0; i < array.GetLength(0); i++)
-    {
         for (int j =0; j < array.GetLength(1); j++)
-        {
-            sumColumns = 0;
-            sumColumns += array[i, j];
-            count += 1;
-        }
-    }        
-    return sumColumns/count;
+            averArray[i] += array[j, i];
+                    for (int i = 0; i < array.GetLength(0); i++)
+                        Console.Write(Math.Round(averArray[i] / array.GetLength(0), 3)  + " | ");
+            
+    
+    return averArray;
 }
 
 Console.WriteLine("Input count of rows: ");
@@ -170,6 +167,7 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 int [,] newArray = New2dArray(m, n, min, max);
 Show2dArray(newArray);
-double average = AverageColumns(newArray);
+Console.WriteLine("Average columns is: ");
+double [] average = AverageColumns(newArray);
 
-Console.WriteLine($"Average {average} ");
+
