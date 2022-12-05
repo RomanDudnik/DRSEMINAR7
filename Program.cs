@@ -11,7 +11,9 @@ double [,] Create2dArray(int row, int column)
 
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            randomArray [i,j] = Math.Round (new Random().Next(-1000, 1000) + new Random().NextDouble(), 2);  //случайные элементы заполнения с ограничением -1000/+1000(можно менять))
+            randomArray [i,j] = Math.Round (new Random().Next(-100,100) + new Random().NextDouble(), 2);
+            //случайные элементы заполнения можно ограничить любым отрезком -> new Random(-1000, 1000.Next()
+            // а можно не ограничивать -> Random().Next()
     return randomArray;
 }
 
@@ -116,7 +118,7 @@ else
 //  8 4 2 4
 //Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-
+/*
 int [,] New2dArray (int row, int column, int minValue, int maxValue)
 {
     int [,] createdArray = new int [row, column];
@@ -143,13 +145,13 @@ void Show2dArray (int [,] array)
 
 double [] AverageColumns (int [,] array)
 {
-    double [] averArray = new double [array.GetLength(0)];
+    double [] averArray = new double [array.GetLength(1)];
 
-    for (int i = 0; i < array.GetLength(0); i++)
-        for (int j =0; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(1); i++)
+        for (int j =0; j < array.GetLength(0); j++)
             averArray[i] += array[j, i];
-                    for (int i = 0; i < array.GetLength(0); i++)
-                        Console.Write(Math.Round(averArray[i] / array.GetLength(0), 3)  + " | ");
+                    for (int k = 0; k < array.GetLength(1); k++)
+                        Console.Write(Math.Round(averArray[k] / array.GetLength(0), 3)  + " | ");
             
     
     return averArray;
@@ -164,10 +166,9 @@ int min = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input max possible value: ");
 int max = Convert.ToInt32(Console.ReadLine());
 
-
 int [,] newArray = New2dArray(m, n, min, max);
 Show2dArray(newArray);
 Console.WriteLine("Average columns is: ");
 double [] average = AverageColumns(newArray);
-
+*/
 
